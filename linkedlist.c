@@ -9,11 +9,12 @@ void printList(struct Node* n){
     }
     
 };
-
+// push a node into the first position of a list
 void push(struct Node** head_ref, int new_data){
     struct Node* new_node=(struct Node*) malloc(sizeof(struct Node));
     new_node->data=new_data;
     new_node->next=* head_ref;
+    //give head_ref the value of new_node 
     * head_ref=new_node;
 };
 /* Given a node prev_node, insert a new node after the given
@@ -30,6 +31,12 @@ void insertAfter(struct Node* prev_node, int new_data){
     prev_node->next=new_node;
 }
 }
+
+void append(struct Node* tail,int new_data){
+    struct Node* new_node=(struct Node*) malloc(sizeof(struct Node));
+    new_node->data=new_data;
+    tail->next=new_node;
+}  
 
 int main()
 {
