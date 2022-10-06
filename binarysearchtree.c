@@ -25,7 +25,7 @@ void inTranversal(TreeNode* root){
     TreeNode* left;
     TreeNode* right;
     if (root->leftPtr==NULL){
-        printf("%f \n",root->key);
+        printf("%0.2f \n",root->key);
         if (root->rightPtr!=NULL){
             right=root->rightPtr;
             inTranversal(right);
@@ -33,6 +33,10 @@ void inTranversal(TreeNode* root){
     } else {
         left=root->leftPtr;
         inTranversal(left);
+        printf("%0.2f \n",root->key);
+        right=root->rightPtr;
+        inTranversal(right);
+        
         
     }
 }
@@ -60,5 +64,5 @@ int main()
     c->leftPtr=NULL;
     c->rightPtr=NULL;
     
-    
+    inTranversal(a);
 }
